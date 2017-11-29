@@ -5,9 +5,9 @@
   <subtitle>从未想过到来，也从未想过离去</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://blog.aishanghai.xin/"/>
   <updated>2017-11-29T05:44:26.833Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://blog.aishanghai.xin/</id>
   
   <author>
     <name>Andrew Zhang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>非典型的复仇者</title>
-    <link href="http://yoursite.com/2016/11/15/index/"/>
-    <id>http://yoursite.com/2016/11/15/index/</id>
+    <link href="http://blog.aishanghai.xin/2016/11/15/index/"/>
+    <id>http://blog.aishanghai.xin/2016/11/15/index/</id>
     <published>2016-11-14T16:00:00.000Z</published>
     <updated>2017-11-29T05:44:26.833Z</updated>
     
@@ -31,16 +31,16 @@
     
     </summary>
     
-      <category term="读后感" scheme="http://yoursite.com/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+      <category term="读后感" scheme="http://blog.aishanghai.xin/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
     
-      <category term="大仲马" scheme="http://yoursite.com/tags/%E5%A4%A7%E4%BB%B2%E9%A9%AC/"/>
+      <category term="大仲马" scheme="http://blog.aishanghai.xin/tags/%E5%A4%A7%E4%BB%B2%E9%A9%AC/"/>
     
-      <category term="法国" scheme="http://yoursite.com/tags/%E6%B3%95%E5%9B%BD/"/>
+      <category term="法国" scheme="http://blog.aishanghai.xin/tags/%E6%B3%95%E5%9B%BD/"/>
     
-      <category term="经典" scheme="http://yoursite.com/tags/%E7%BB%8F%E5%85%B8/"/>
+      <category term="经典" scheme="http://blog.aishanghai.xin/tags/%E7%BB%8F%E5%85%B8/"/>
     
-      <category term="爱情" scheme="http://yoursite.com/tags/%E7%88%B1%E6%83%85/"/>
+      <category term="爱情" scheme="http://blog.aishanghai.xin/tags/%E7%88%B1%E6%83%85/"/>
     
   </entry>
   
