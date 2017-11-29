@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-28T11:45:28.323Z</updated>
+  <updated>2017-11-29T03:58:38.926Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[object Object]</title>
+    <link href="http://yoursite.com/2017/11/29/index_1/"/>
+    <id>http://yoursite.com/2017/11/29/index_1/</id>
+    <published>2017-11-29T03:58:38.926Z</published>
+    <updated>2017-11-29T03:58:38.926Z</updated>
+    
+    <content type="html"><![CDATA[<p>上面部分是规定的头部信息，这行开始就是文章内容了…</p>]]></content>
+    
+    <summary type="html">
+    
+      文章摘要，可以是一大段，可以换行，用英文引号括起来
+    
+    </summary>
+    
+      <category term="搞软件" scheme="http://yoursite.com/categories/%E6%90%9E%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+      <category term="晒酷软" scheme="http://yoursite.com/tags/%E6%99%92%E9%85%B7%E8%BD%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
