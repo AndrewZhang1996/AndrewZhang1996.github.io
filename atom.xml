@@ -34,15 +34,15 @@
       <category term="摘抄" scheme="http://blog.aishanghai.xin/categories/%E6%91%98%E6%8A%84/"/>
     
     
-      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
-    
       <category term="人生" scheme="http://blog.aishanghai.xin/tags/%E4%BA%BA%E7%94%9F/"/>
     
       <category term="思辨" scheme="http://blog.aishanghai.xin/tags/%E6%80%9D%E8%BE%A8/"/>
     
-      <category term="季羡林" scheme="http://blog.aishanghai.xin/tags/%E5%AD%A3%E7%BE%A1%E6%9E%97/"/>
+      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
     
       <category term="中国大陆" scheme="http://blog.aishanghai.xin/tags/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/"/>
+    
+      <category term="季羡林" scheme="http://blog.aishanghai.xin/tags/%E5%AD%A3%E7%BE%A1%E6%9E%97/"/>
     
   </entry>
   
@@ -94,8 +94,6 @@
       <category term="摘抄" scheme="http://blog.aishanghai.xin/categories/%E6%91%98%E6%8A%84/"/>
     
     
-      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
-    
       <category term="纪德" scheme="http://blog.aishanghai.xin/tags/%E7%BA%AA%E5%BE%B7/"/>
     
       <category term="法国" scheme="http://blog.aishanghai.xin/tags/%E6%B3%95%E5%9B%BD/"/>
@@ -103,6 +101,8 @@
       <category term="人生" scheme="http://blog.aishanghai.xin/tags/%E4%BA%BA%E7%94%9F/"/>
     
       <category term="思辨" scheme="http://blog.aishanghai.xin/tags/%E6%80%9D%E8%BE%A8/"/>
+    
+      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
     
   </entry>
   
@@ -124,6 +124,8 @@
       <category term="摘抄" scheme="http://blog.aishanghai.xin/categories/%E6%91%98%E6%8A%84/"/>
     
     
+      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
+    
       <category term="林语堂" scheme="http://blog.aishanghai.xin/tags/%E6%9E%97%E8%AF%AD%E5%A0%82/"/>
     
       <category term="台湾" scheme="http://blog.aishanghai.xin/tags/%E5%8F%B0%E6%B9%BE/"/>
@@ -131,8 +133,6 @@
       <category term="民国" scheme="http://blog.aishanghai.xin/tags/%E6%B0%91%E5%9B%BD/"/>
     
       <category term="爱情" scheme="http://blog.aishanghai.xin/tags/%E7%88%B1%E6%83%85/"/>
-    
-      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
     
   </entry>
   
@@ -154,15 +154,15 @@
       <category term="摘抄" scheme="http://blog.aishanghai.xin/categories/%E6%91%98%E6%8A%84/"/>
     
     
+      <category term="思辨" scheme="http://blog.aishanghai.xin/tags/%E6%80%9D%E8%BE%A8/"/>
+    
+      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
+    
       <category term="林语堂" scheme="http://blog.aishanghai.xin/tags/%E6%9E%97%E8%AF%AD%E5%A0%82/"/>
     
       <category term="台湾" scheme="http://blog.aishanghai.xin/tags/%E5%8F%B0%E6%B9%BE/"/>
     
       <category term="民国" scheme="http://blog.aishanghai.xin/tags/%E6%B0%91%E5%9B%BD/"/>
-    
-      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
-    
-      <category term="思辨" scheme="http://blog.aishanghai.xin/tags/%E6%80%9D%E8%BE%A8/"/>
     
   </entry>
   
@@ -186,9 +186,9 @@
     
       <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
     
-      <category term="中国大陆" scheme="http://blog.aishanghai.xin/tags/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/"/>
-    
       <category term="老舍" scheme="http://blog.aishanghai.xin/tags/%E8%80%81%E8%88%8D/"/>
+    
+      <category term="中国大陆" scheme="http://blog.aishanghai.xin/tags/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/"/>
     
       <category term="经典" scheme="http://blog.aishanghai.xin/tags/%E7%BB%8F%E5%85%B8/"/>
     
@@ -268,9 +268,9 @@
       <category term="读后感" scheme="http://blog.aishanghai.xin/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
     
-      <category term="爱情" scheme="http://blog.aishanghai.xin/tags/%E7%88%B1%E6%83%85/"/>
-    
       <category term="法国" scheme="http://blog.aishanghai.xin/tags/%E6%B3%95%E5%9B%BD/"/>
+    
+      <category term="爱情" scheme="http://blog.aishanghai.xin/tags/%E7%88%B1%E6%83%85/"/>
     
       <category term="经典" scheme="http://blog.aishanghai.xin/tags/%E7%BB%8F%E5%85%B8/"/>
     
