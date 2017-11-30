@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.aishanghai.xin/about/me.html</loc>
+    
+    <lastmod>2017-11-30T03:47:38.952Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.aishanghai.xin/2017/06/02/%E9%9B%AA%E8%8E%B1%E6%95%A3%E6%96%87-%E6%91%98%E6%8A%84/</loc>
     
     <lastmod>2017-11-30T03:24:57.134Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://blog.aishanghai.xin/2017/05/06/%E4%BA%AC%E5%8D%8E%E7%83%9F%E4%BA%91-%E6%91%98%E6%8A%84/</loc>
     
     <lastmod>2017-11-29T14:49:00.853Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.aishanghai.xin/about/me.html</loc>
-    
-    <lastmod>2017-11-29T13:35:48.206Z</lastmod>
     
   </url>
   
