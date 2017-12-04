@@ -3,6 +3,44 @@
   
     
     <entry>
+      <title><![CDATA[调教自己的DuerOS]]></title>
+      <url>/2017/12/04/%E7%BB%99DuerOS%E6%94%B9%E5%90%8D/</url>
+      <content type="html"><![CDATA[<p><br></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本身来说，DuerOS是基于镜像的，并不能实现个性化定制。</p>
+<p>因此，Python SDK就成为了一个必要的配置，来实现对DuerOS的个性化定制。</p>
+<h1 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h1><p>使用ssh连接或者远程桌面连接树莓派</p>
+<h2 id="安装前的一些配置"><a href="#安装前的一些配置" class="headerlink" title="安装前的一些配置"></a>安装前的一些配置</h2><ol>
+<li><p>一定要关闭镜像中的小度服务，因为镜像的服务会占用麦克风资源。</p>
+<p>‘’’</p>
+<p>sudo systemctl disable duer</p>
+<p>sudo systemctl stop duer</p>
+<p>‘’’</p>
+</li>
+<li><p>​</p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> DuerOS开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> DuerOS </tag>
+            
+            <tag> 人工智能/AI </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[《季羡林散文集》的摘抄]]></title>
       <url>/2017/06/25/%E5%AD%A3%E7%BE%A1%E6%9E%97%E6%95%A3%E6%96%87%E9%9B%86-%E6%91%98%E6%8A%84/</url>
       <content type="html"><![CDATA[<p><br></p>
@@ -91,9 +129,9 @@
             
             <tag> 近代 </tag>
             
-            <tag> 人生 </tag>
-            
             <tag> 思辨 </tag>
+            
+            <tag> 人生 </tag>
             
             <tag> 中国大陆 </tag>
             
@@ -147,9 +185,9 @@
         
         <tags>
             
-            <tag> 人生 </tag>
-            
             <tag> 思辨 </tag>
+            
+            <tag> 人生 </tag>
             
             <tag> 经典 </tag>
             
@@ -285,13 +323,13 @@
             
             <tag> 近代 </tag>
             
+            <tag> 思辨 </tag>
+            
             <tag> 纪德 </tag>
             
             <tag> 法国 </tag>
             
             <tag> 人生 </tag>
-            
-            <tag> 思辨 </tag>
             
         </tags>
         
