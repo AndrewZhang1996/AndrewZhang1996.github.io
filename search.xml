@@ -34,8 +34,7 @@
 <p>Enter键识别唤醒：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./enter_trigger_start.sh</span><br></pre></td></tr></table></figure>
 <p>之后就会有交互了，并且你可以看到控制台持续输出。</p>
-<font color="red">如果报错：</font>
-
+<p><strong>如果报错：</strong></p>
 <pre><code>1. 检查是否安装了正确的openssl和python版本
 2. 是否用正确的开发者账号进行了Auth认证
 3. 如果无声音，则可以修改raspberry pi的audio设置，具体可以自行百度，或者直接换耳机孔
