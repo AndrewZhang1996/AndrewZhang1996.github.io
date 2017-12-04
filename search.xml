@@ -50,14 +50,14 @@
 <p>然后把授权回调页改为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:3000/authresponse</span><br></pre></td></tr></table></figure>
 <p>如图：</p>
-<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/屏幕快照 2017-12-04 下午1.54.32.png" alt="屏幕快照 2017-12-04 下午1.54.32"></p>
+<p><img src="/2017/12/04/给DuerOS改名/屏幕快照 2017-12-04 下午1.54.32.png" alt="屏幕快照 2017-12-04 下午1.54.32"></p>
 <p>这样就可以用我们自己的开发者账号来与服务器进行交互了</p>
 <h1 id="训练唤醒词"><a href="#训练唤醒词" class="headerlink" title="训练唤醒词"></a>训练唤醒词</h1><p>选好唤醒词之后，进入Snowboy平台进行训练。</p>
 <p><a href="https://snowboy.kitt.ai/" target="_blank" rel="noopener">https://snowboy.kitt.ai/</a></p>
 <p>可以选择自己训练，或者别人训练好的。</p>
 <p>这里要注意一点，自己训练的模型，基本只能自己使用，若想多人使用，参与训练的必须要多。</p>
 <p>例如，</p>
-<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/屏幕快照 2017-12-04 下午2.00.43.png" alt="屏幕快照 2017-12-04 下午2.00.43"></p>
+<p><img src="/2017/12/04/给DuerOS改名/屏幕快照 2017-12-04 下午2.00.43.png" alt="屏幕快照 2017-12-04 下午2.00.43"></p>
 <p>英语中，jarvis被训练得最多，说明它在识别的时候会更准确。</p>
 <p>训练好自己的模型后，直接下载它，会得到一个<em>*</em>.pmdl的文件。</p>
 <h1 id="配置Snowboy"><a href="#配置Snowboy" class="headerlink" title="配置Snowboy"></a>配置Snowboy</h1><h2 id="获取Snowboy-Python"><a href="#获取Snowboy-Python" class="headerlink" title="获取Snowboy Python"></a>获取Snowboy Python</h2><p>进入Downloads文件夹，</p>
@@ -90,11 +90,11 @@
 <p>将snowboy/swig/Python中对应的snowboydetect.py和_snowboydetect.so这两个文件拷贝过来并替换。</p>
 <p>最后，把刚刚的pmdl模型文件拷贝至snowboy目录，完成整个文件替换过程。</p>
 <h2 id="修改识别模块代码"><a href="#修改识别模块代码" class="headerlink" title="修改识别模块代码"></a>修改识别模块代码</h2><h3 id="修改app-snowboy-snowboydecoder-py"><a href="#修改app-snowboy-snowboydecoder-py" class="headerlink" title="修改app/snowboy/snowboydecoder.py"></a>修改app/snowboy/snowboydecoder.py</h3><p>修改<strong> init </strong>（）函数，并添加feed_back方法，</p>
-<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/1509774773441055464.png" alt="1509774773441055464"></p>
+<p><img src="/2017/12/04/给DuerOS改名/1509774773441055464.png" alt="1509774773441055464"></p>
 <p>修改terminate方法，</p>
-<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/屏幕快照 2017-12-04 下午1.54.32.png" alt="1509774706064062625"></p>
+<p><img src="/2017/12/04/给DuerOS改名/屏幕快照 2017-12-04 下午1.54.32.png" alt="1509774706064062625"></p>
 <h3 id="修改app-wakeup-trigger-main-py"><a href="#修改app-wakeup-trigger-main-py" class="headerlink" title="修改app/wakeup_trigger_main.py"></a>修改app/wakeup_trigger_main.py</h3><p>在main方法中更新模型，如图，</p>
-<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/1509774842199049000.png" alt="1509774842199049000"></p>
+<p><img src="/2017/12/04/给DuerOS改名/1509774842199049000.png" alt="1509774842199049000"></p>
 <p>完成修改。</p>
 <p><strong><em>注意：Python代码的缩紧非常重要，一定要保持对其，且tab和空格不要用错</em></strong></p>
 <h1 id="安装成功！"><a href="#安装成功！" class="headerlink" title="安装成功！"></a>安装成功！</h1><p>恭喜你，可以用自己定制的唤醒词唤醒她了～</p>
@@ -206,11 +206,11 @@
         
         <tags>
             
+            <tag> 近代 </tag>
+            
             <tag> 人生 </tag>
             
             <tag> 思辨 </tag>
-            
-            <tag> 近代 </tag>
             
             <tag> 中国大陆 </tag>
             
@@ -400,6 +400,8 @@
         
         <tags>
             
+            <tag> 近代 </tag>
+            
             <tag> 纪德 </tag>
             
             <tag> 法国 </tag>
@@ -407,8 +409,6 @@
             <tag> 人生 </tag>
             
             <tag> 思辨 </tag>
-            
-            <tag> 近代 </tag>
             
         </tags>
         
@@ -488,8 +488,6 @@
         
         <tags>
             
-            <tag> 近代 </tag>
-            
             <tag> 林语堂 </tag>
             
             <tag> 台湾 </tag>
@@ -497,6 +495,8 @@
             <tag> 民国 </tag>
             
             <tag> 爱情 </tag>
+            
+            <tag> 近代 </tag>
             
         </tags>
         
@@ -563,15 +563,15 @@
         
         <tags>
             
-            <tag> 思辨 </tag>
-            
-            <tag> 近代 </tag>
-            
             <tag> 林语堂 </tag>
             
             <tag> 台湾 </tag>
             
             <tag> 民国 </tag>
+            
+            <tag> 近代 </tag>
+            
+            <tag> 思辨 </tag>
             
         </tags>
         
@@ -707,9 +707,9 @@
         
         <tags>
             
-            <tag> 法国 </tag>
-            
             <tag> 爱情 </tag>
+            
+            <tag> 法国 </tag>
             
             <tag> 经典 </tag>
             
