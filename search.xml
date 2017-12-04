@@ -42,7 +42,7 @@
 </code></pre><h1 id="将Anth授权该为自己的账号"><a href="#将Anth授权该为自己的账号" class="headerlink" title="将Anth授权该为自己的账号"></a>将Anth授权该为自己的账号</h1><h2 id="创建产品"><a href="#创建产品" class="headerlink" title="创建产品"></a>创建产品</h2><p>进入DuerOS开放平台—登陆—控制台—设备控制台—配置新设备</p>
 <p>选择：音箱—linux—输入产品名称（随意）</p>
 <h2 id="产品配置"><a href="#产品配置" class="headerlink" title="产品配置"></a>产品配置</h2><p>基础信息中就有 client_id 以及 client_secret，将其复制。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](给DuerOS改名/屏幕快照 2017-12-04 下午1.51.14.png)</span><br></pre></td></tr></table></figure>
+<p><img src="/2017/12/04/给DuerOS改名/屏幕快照 2017-12-04 下午1.51.14.png" alt=""></p>
 <p>启用开发者的注册信息</p>
 <p>然后进入基础信息中的OAUTH CONFIG URL</p>
 <p>选择安全设置</p>
@@ -206,11 +206,11 @@
         
         <tags>
             
-            <tag> 近代 </tag>
-            
             <tag> 人生 </tag>
             
             <tag> 思辨 </tag>
+            
+            <tag> 近代 </tag>
             
             <tag> 中国大陆 </tag>
             
@@ -400,8 +400,6 @@
         
         <tags>
             
-            <tag> 近代 </tag>
-            
             <tag> 纪德 </tag>
             
             <tag> 法国 </tag>
@@ -409,6 +407,8 @@
             <tag> 人生 </tag>
             
             <tag> 思辨 </tag>
+            
+            <tag> 近代 </tag>
             
         </tags>
         
@@ -488,6 +488,8 @@
         
         <tags>
             
+            <tag> 近代 </tag>
+            
             <tag> 林语堂 </tag>
             
             <tag> 台湾 </tag>
@@ -495,8 +497,6 @@
             <tag> 民国 </tag>
             
             <tag> 爱情 </tag>
-            
-            <tag> 近代 </tag>
             
         </tags>
         
@@ -563,15 +563,15 @@
         
         <tags>
             
+            <tag> 思辨 </tag>
+            
+            <tag> 近代 </tag>
+            
             <tag> 林语堂 </tag>
             
             <tag> 台湾 </tag>
             
             <tag> 民国 </tag>
-            
-            <tag> 近代 </tag>
-            
-            <tag> 思辨 </tag>
             
         </tags>
         
@@ -707,9 +707,9 @@
         
         <tags>
             
-            <tag> 爱情 </tag>
-            
             <tag> 法国 </tag>
+            
+            <tag> 爱情 </tag>
             
             <tag> 经典 </tag>
             
