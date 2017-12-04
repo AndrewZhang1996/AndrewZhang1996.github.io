@@ -36,12 +36,12 @@
 <p>之后就会有交互了，并且你可以看到控制台持续输出。</p>
 <font color="red"><strong>如果报错：</strong></font>
 
-
-
-<pre><code>    1. 检查是否安装了正确的openssl和python版本
-2. 是否用正确的开发者账号进行了Auth认证
-3. 如果无声音，则可以修改raspberry pi的audio设置，具体可以自行百度，或者直接换耳机孔
-</code></pre><h1 id="将Anth授权该为自己的账号"><a href="#将Anth授权该为自己的账号" class="headerlink" title="将Anth授权该为自己的账号"></a>将Anth授权该为自己的账号</h1><h2 id="创建产品"><a href="#创建产品" class="headerlink" title="创建产品"></a>创建产品</h2><p>进入DuerOS开放平台—登陆—控制台—设备控制台—配置新设备</p>
+<ul>
+<li>检查是否安装了正确的openssl和python版本</li>
+<li>是否用正确的开发者账号进行了Auth认证</li>
+<li>如果无声音，则可以修改raspberry pi的audio设置，具体可以自行百度，或者直接换耳机孔</li>
+</ul>
+<h1 id="将Anth授权该为自己的账号"><a href="#将Anth授权该为自己的账号" class="headerlink" title="将Anth授权该为自己的账号"></a>将Anth授权该为自己的账号</h1><h2 id="创建产品"><a href="#创建产品" class="headerlink" title="创建产品"></a>创建产品</h2><p>进入DuerOS开放平台—登陆—控制台—设备控制台—配置新设备</p>
 <p>选择：音箱—linux—输入产品名称（随意）</p>
 <h2 id="产品配置"><a href="#产品配置" class="headerlink" title="产品配置"></a>产品配置</h2><p>基础信息中就有 client_id 以及 client_secret，将其复制在<code>DuerOS-Python-Client/app/auth.py</code>中。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim DuerOS-Python-Client/app/auth.py</span><br></pre></td></tr></table></figure>
@@ -211,11 +211,11 @@
             
             <tag> 近代 </tag>
             
-            <tag> 人生 </tag>
-            
             <tag> 思辨 </tag>
             
             <tag> 中国大陆 </tag>
+            
+            <tag> 人生 </tag>
             
             <tag> 季羡林 </tag>
             
@@ -267,11 +267,11 @@
         
         <tags>
             
-            <tag> 人生 </tag>
-            
             <tag> 思辨 </tag>
             
             <tag> 经典 </tag>
+            
+            <tag> 人生 </tag>
             
             <tag> 雪莱 </tag>
             
@@ -405,13 +405,13 @@
             
             <tag> 近代 </tag>
             
+            <tag> 思辨 </tag>
+            
             <tag> 纪德 </tag>
             
             <tag> 法国 </tag>
             
             <tag> 人生 </tag>
-            
-            <tag> 思辨 </tag>
             
         </tags>
         
@@ -632,9 +632,9 @@
         
         <tags>
             
-            <tag> 人生 </tag>
-            
             <tag> 中国大陆 </tag>
+            
+            <tag> 人生 </tag>
             
             <tag> 余秋雨 </tag>
             
@@ -712,9 +712,9 @@
             
             <tag> 爱情 </tag>
             
-            <tag> 法国 </tag>
-            
             <tag> 经典 </tag>
+            
+            <tag> 法国 </tag>
             
             <tag> 大仲马 </tag>
             
