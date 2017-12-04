@@ -96,7 +96,7 @@
 <h3 id="修改app-wakeup-trigger-main-py"><a href="#修改app-wakeup-trigger-main-py" class="headerlink" title="修改app/wakeup_trigger_main.py"></a>修改app/wakeup_trigger_main.py</h3><p>在main方法中更新模型，如图，</p>
 <p><img src="/2017/12/04/给DuerOS改名/1509774842199049000.png" alt=""></p>
 <p>完成修改。</p>
-<p><strong><em>注意：Python代码的缩紧非常重要，一定要保持对其，且tab和空格不要用错</em></strong></p>
+<p><strong><em>注意：Python代码的缩进非常重要，一定要保持对其，且tab和空格不要用错</em></strong></p>
 <h1 id="安装成功！"><a href="#安装成功！" class="headerlink" title="安装成功！"></a>安装成功！</h1><p>恭喜你，可以用自己定制的唤醒词唤醒她了～</p>
 ]]></content>
       
