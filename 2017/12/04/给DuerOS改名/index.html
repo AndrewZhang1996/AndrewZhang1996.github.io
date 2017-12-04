@@ -4,14 +4,93 @@
 <h1 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h1><p>使用ssh连接或者远程桌面连接树莓派</p>
 <h2 id="安装前的一些配置"><a href="#安装前的一些配置" class="headerlink" title="安装前的一些配置"></a>安装前的一些配置</h2><ol>
 <li><p>一定要关闭镜像中的小度服务，因为镜像的服务会占用麦克风资源。</p>
-<p>‘’’</p>
-<p>sudo systemctl disable duer</p>
-<p>sudo systemctl stop duer</p>
-<p>‘’’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl disable duer</span><br><span class="line">sudo systemctl stop duer</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>​</p>
+<li><p>安装相关的依赖包，其中hyper库用来支持http2.0 client，pyaudio用来支持录音，tornado用来完成oauth认证</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install python-dateutil</span><br><span class="line">sudo apt-get install gir1.2-gstreamer-1.0</span><br><span class="line">sudo apt-get install python-pyaudio</span><br><span class="line">sudo apt-get install libatlas-base-dev</span><br><span class="line">sudo apt-get install python-dev     </span><br><span class="line">sudo pip install tornado</span><br><span class="line">sudo pip install hyper</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<h2 id="安装Python-SDK"><a href="#安装Python-SDK" class="headerlink" title="安装Python SDK"></a>安装Python SDK</h2><ol>
+<li><p>一定要安装Python2.7.14以及OpenSSL1.1，实测其他版本会报出无法Connect的错误。</p>
+<p>OpenSSL：链接：<a href="https://pan.baidu.com/s/1slPuQhZ" target="_blank" rel="noopener">https://pan.baidu.com/s/1slPuQhZ</a>  密码：cnx1</p>
+<p>Python2.7.14: 链接：<a href="https://pan.baidu.com/s/1o7LgYO6 " target="_blank" rel="noopener">https://pan.baidu.com/s/1o7LgYO6 </a> 密码：vvmp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxvf openssl1.1.tar.gz -C /usr</span><br><span class="line">sudo tar -zxvf python2.7.14.tar.gz -C /usr/local/</span><br><span class="line">sudo rm -rf /usr/bin/python</span><br><span class="line">sudo ln -s /usr/local/python2.7.14/bin/python /usr/bin/python</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载Python SDK, 最好在Downloads文件夹下执行，或者你自己选定的文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/MyDuerOS/DuerOS-Python-Client.git</span><br><span class="line">cd DuerOS-Python-Client</span><br><span class="line">git checkout raspberry-dev</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="测试Python-SDK"><a href="#测试Python-SDK" class="headerlink" title="测试Python SDK"></a>测试Python SDK</h1><h3 id="1-Auth认证"><a href="#1-Auth认证" class="headerlink" title="1. Auth认证"></a>1. Auth认证</h3><p>此步应该在远程桌面连接方式下运行，因为要弹出网页并填写你的开发者账号。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./auth.sh</span><br></pre></td></tr></table></figure>
+<h3 id="2-Wake-UP"><a href="#2-Wake-UP" class="headerlink" title="2. Wake UP"></a>2. Wake UP</h3><p>语音识别唤醒：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./wakeup_trigger_start.sh</span><br></pre></td></tr></table></figure>
+<p>Enter键识别唤醒：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./enter_trigger_start.sh</span><br></pre></td></tr></table></figure>
+<p>之后就会有交互了，并且你可以看到控制台持续输出。</p>
+<font color="red">如果报错：</font>
+
+<pre><code>1. 检查是否安装了正确的openssl和python版本
+2. 是否用正确的开发者账号进行了Auth认证
+3. 如果无声音，则可以修改raspberry pi的audio设置，具体可以自行百度，或者直接换耳机孔
+</code></pre><h1 id="将Anth授权该为自己的账号"><a href="#将Anth授权该为自己的账号" class="headerlink" title="将Anth授权该为自己的账号"></a>将Anth授权该为自己的账号</h1><h2 id="创建产品"><a href="#创建产品" class="headerlink" title="创建产品"></a>创建产品</h2><p>进入DuerOS开放平台—登陆—控制台—设备控制台—配置新设备</p>
+<p>选择：音箱—linux—输入产品名称（随意</p>
+<h2 id="产品配置"><a href="#产品配置" class="headerlink" title="产品配置"></a>产品配置</h2><p>基础信息中就有 client_id 以及 client_secret，将其复制。</p>
+<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/屏幕快照 2017-12-04 下午1.51.14.png" alt="屏幕快照 2017-12-04 下午1.51.14"></p>
+<p>启用开发者的注册信息</p>
+<p>然后进入基础信息中的OAUTH CONFIG URL</p>
+<p>选择安全设置</p>
+<p>打开Implicit Grant</p>
+<p>然后把授权回调页改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:3000/authresponse</span><br></pre></td></tr></table></figure>
+<p>如图：</p>
+<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/屏幕快照 2017-12-04 下午1.54.32.png" alt="屏幕快照 2017-12-04 下午1.54.32"></p>
+<p>这样就可以用我们自己的开发者账号来与服务器进行交互了</p>
+<h1 id="训练唤醒词"><a href="#训练唤醒词" class="headerlink" title="训练唤醒词"></a>训练唤醒词</h1><p>选好唤醒词之后，进入Snowboy平台进行训练。</p>
+<p><a href="https://snowboy.kitt.ai/" target="_blank" rel="noopener">https://snowboy.kitt.ai/</a></p>
+<p>可以选择自己训练，或者别人训练好的。</p>
+<p>这里要注意一点，自己训练的模型，基本只能自己使用，若想多人使用，参与训练的必须要多。</p>
+<p>例如，</p>
+<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/屏幕快照 2017-12-04 下午2.00.43.png" alt="屏幕快照 2017-12-04 下午2.00.43"></p>
+<p>英语中，jarvis被训练得最多，说明它在识别的时候会更准确。</p>
+<p>训练好自己的模型后，直接下载它，会得到一个<em>*</em>.pmdl的文件。</p>
+<h1 id="配置Snowboy"><a href="#配置Snowboy" class="headerlink" title="配置Snowboy"></a>配置Snowboy</h1><h2 id="获取Snowboy-Python"><a href="#获取Snowboy-Python" class="headerlink" title="获取Snowboy Python"></a>获取Snowboy Python</h2><p>进入Downloads文件夹，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Kitt-AI/snowboy.git</span><br></pre></td></tr></table></figure>
+<p>直接从git仓库中clone就可以。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd snowboy/swig/Python</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p><strong><em>如果这步报错 （swig：not found），则要安装swig</em></strong></p>
+<h2 id="安装swig"><a href="#安装swig" class="headerlink" title="安装swig"></a>安装swig</h2><p>从swig官网下载最新版， <a href="http://www.swig.org/download.html" target="_blank" rel="noopener">http://www.swig.org/download.html</a> 。我下载的是3.0.12版本。</p>
+<p>解压，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxvf swig-3.0.12.tar.gz</span><br></pre></td></tr></table></figure>
+<p>安装g++和pcre，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install g++</span><br><span class="line">sudo apt-get install libpcre3 libpcre3-dev</span><br></pre></td></tr></table></figure>
+<p>接着可以进入解压后的swig文件夹进行安装，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/swig3.0.12  </span><br><span class="line">make  </span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<p>最后设置一下环境变量，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>打开后，拉到最后一行，按i进入insert状态，在最后一行输入，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH=/usr/local/swig3.0.12/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>然后按esc，输入：wq保存并退出。</p>
+<p>最后要输入，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<p>使更改过的profile生效。</p>
+<h2 id="生成平台代码"><a href="#生成平台代码" class="headerlink" title="生成平台代码"></a>生成平台代码</h2><p>之后就可以进入刚刚下载的snowboy目录，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd snowboy/swig/Python  </span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>执行完成后就会生成一个.so文件。</p>
+<h2 id="替换识别模块"><a href="#替换识别模块" class="headerlink" title="替换识别模块"></a>替换识别模块</h2><p>将snowboy/examples目录下的Python目录更名为snowboy，然后替换DuerOS-Python-Client目录的app/snowboy</p>
+<p><strong><em>注意！！一定要备份原有的app/snowboy文件，一会还要使用</em></strong></p>
+<p>复制过来之后，会发现resource文件夹、.py、.so文件有感叹号。这是因为软拷贝的问题。</p>
+<p>有一个简单的解决方法：将原来的snowboy文件夹中的Resource文件夹拷贝过来并替换。</p>
+<p>将snowboy/swig/Python中对应的snowboydetect.py和_snowboydetect.so这两个文件拷贝过来并替换。</p>
+<p>最后，把刚刚的pmdl模型文件拷贝至snowboy目录，完成整个文件替换过程。</p>
+<h2 id="修改识别模块代码"><a href="#修改识别模块代码" class="headerlink" title="修改识别模块代码"></a>修改识别模块代码</h2><h3 id="修改app-snowboy-snowboydecoder-py"><a href="#修改app-snowboy-snowboydecoder-py" class="headerlink" title="修改app/snowboy/snowboydecoder.py"></a>修改app/snowboy/snowboydecoder.py</h3><p>修改<strong> init </strong>（）函数，并添加feed_back方法，</p>
+<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/1509774773441055464.png" alt="1509774773441055464"></p>
+<p>修改terminate方法，</p>
+<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/屏幕快照 2017-12-04 下午1.54.32.png" alt="1509774706064062625"></p>
+<h3 id="修改app-wakeup-trigger-main-py"><a href="#修改app-wakeup-trigger-main-py" class="headerlink" title="修改app/wakeup_trigger_main.py"></a>修改app/wakeup_trigger_main.py</h3><p>在main方法中更新模型，如图，</p>
+<p><img src="/Users/contana/Desktop/GitHub/Blog/source/pictures/DuerOS定制唤醒/1509774842199049000.png" alt="1509774842199049000"></p>
+<p>完成修改。</p>
+<p><strong><em>注意：Python代码的缩紧非常重要，一定要保持对其，且tab和空格不要用错</em></strong></p>
+<h1 id="安装成功！"><a href="#安装成功！" class="headerlink" title="安装成功！"></a>安装成功！</h1><p>恭喜你，可以用自己定制的唤醒词唤醒她了～</p>
 </div></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
 var verify = 'false' == true ? true : false;
 var GUEST_INFO = ['nick','mail','link'];
@@ -29,7 +108,7 @@ window.valine = new Valine({
   avatar:'mm',
   guest_info:guest_info,
   pageSize:'10'
-})</script></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DuerOS开发/">DuerOS开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/摘抄/">摘抄</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/读后感/">读后感</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/三毛/" style="font-size: 15px;">三毛</a> <a href="/tags/林语堂/" style="font-size: 15px;">林语堂</a> <a href="/tags/民国/" style="font-size: 15px;">民国</a> <a href="/tags/爱情/" style="font-size: 15px;">爱情</a> <a href="/tags/近代/" style="font-size: 15px;">近代</a> <a href="/tags/思辨/" style="font-size: 15px;">思辨</a> <a href="/tags/纪德/" style="font-size: 15px;">纪德</a> <a href="/tags/法国/" style="font-size: 15px;">法国</a> <a href="/tags/人生/" style="font-size: 15px;">人生</a> <a href="/tags/老舍/" style="font-size: 15px;">老舍</a> <a href="/tags/中国大陆/" style="font-size: 15px;">中国大陆</a> <a href="/tags/经典/" style="font-size: 15px;">经典</a> <a href="/tags/台湾/" style="font-size: 15px;">台湾</a> <a href="/tags/生活/" style="font-size: 15px;">生活</a> <a href="/tags/现代/" style="font-size: 15px;">现代</a> <a href="/tags/季羡林/" style="font-size: 15px;">季羡林</a> <a href="/tags/DuerOS/" style="font-size: 15px;">DuerOS</a> <a href="/tags/人工智能-AI/" style="font-size: 15px;">人工智能/AI</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/余秋雨/" style="font-size: 15px;">余秋雨</a> <a href="/tags/当代/" style="font-size: 15px;">当代</a> <a href="/tags/雪莱/" style="font-size: 15px;">雪莱</a> <a href="/tags/英国/" style="font-size: 15px;">英国</a> <a href="/tags/大仲马/" style="font-size: 15px;">大仲马</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/给DuerOS改名/">调教自己的DuerOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/季羡林散文集-摘抄/">《季羡林散文集》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/雪莱散文-摘抄/">《雪莱散文》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/人间食粮-纪德/">《人间食粮》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/06/京华烟云-摘抄/">《京华烟云》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/12/吾国与吾民-摘抄/">《吾国与吾民》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/四世同堂-摘抄/">《四世同堂》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/行者无疆-摘抄/">《行者无疆》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/05/撒哈拉的故事-摘抄/">《撒哈拉故事》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/非典型的复仇者/">非典型的复仇者</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.wenao.wang/" title="文傲的博客" target="_blank">文傲的博客</a><ul></ul><a href="http://xzhaobin.life/" title="ZhaoBin" target="_blank">ZhaoBin</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">人生的赞美诗.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+})</script></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DuerOS开发/">DuerOS开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/摘抄/">摘抄</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/读后感/">读后感</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/三毛/" style="font-size: 15px;">三毛</a> <a href="/tags/林语堂/" style="font-size: 15px;">林语堂</a> <a href="/tags/民国/" style="font-size: 15px;">民国</a> <a href="/tags/爱情/" style="font-size: 15px;">爱情</a> <a href="/tags/近代/" style="font-size: 15px;">近代</a> <a href="/tags/思辨/" style="font-size: 15px;">思辨</a> <a href="/tags/纪德/" style="font-size: 15px;">纪德</a> <a href="/tags/法国/" style="font-size: 15px;">法国</a> <a href="/tags/人生/" style="font-size: 15px;">人生</a> <a href="/tags/老舍/" style="font-size: 15px;">老舍</a> <a href="/tags/中国大陆/" style="font-size: 15px;">中国大陆</a> <a href="/tags/经典/" style="font-size: 15px;">经典</a> <a href="/tags/台湾/" style="font-size: 15px;">台湾</a> <a href="/tags/生活/" style="font-size: 15px;">生活</a> <a href="/tags/现代/" style="font-size: 15px;">现代</a> <a href="/tags/DuerOS/" style="font-size: 15px;">DuerOS</a> <a href="/tags/人工智能-AI/" style="font-size: 15px;">人工智能/AI</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/季羡林/" style="font-size: 15px;">季羡林</a> <a href="/tags/余秋雨/" style="font-size: 15px;">余秋雨</a> <a href="/tags/当代/" style="font-size: 15px;">当代</a> <a href="/tags/雪莱/" style="font-size: 15px;">雪莱</a> <a href="/tags/英国/" style="font-size: 15px;">英国</a> <a href="/tags/大仲马/" style="font-size: 15px;">大仲马</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/给DuerOS改名/">调教自己的DuerOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/季羡林散文集-摘抄/">《季羡林散文集》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/雪莱散文-摘抄/">《雪莱散文》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/人间食粮-纪德/">《人间食粮》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/06/京华烟云-摘抄/">《京华烟云》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/12/吾国与吾民-摘抄/">《吾国与吾民》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/四世同堂-摘抄/">《四世同堂》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/行者无疆-摘抄/">《行者无疆》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/05/撒哈拉的故事-摘抄/">《撒哈拉故事》的摘抄</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/非典型的复仇者/">非典型的复仇者</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.wenao.wang/" title="文傲的博客" target="_blank">文傲的博客</a><ul></ul><a href="http://xzhaobin.life/" title="ZhaoBin" target="_blank">ZhaoBin</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">人生的赞美诗.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
 if (search_path.length == 0) {
    search_path = 'search.xml';
 }
