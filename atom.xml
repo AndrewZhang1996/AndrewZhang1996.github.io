@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.aishanghai.xin/"/>
-  <updated>2017-12-04T10:43:17.149Z</updated>
+  <updated>2017-12-06T11:18:26.328Z</updated>
   <id>http://blog.aishanghai.xin/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>QuickSort Algorithm in Python</title>
+    <link href="http://blog.aishanghai.xin/2017/12/06/Quick-Sort-in-Python/"/>
+    <id>http://blog.aishanghai.xin/2017/12/06/Quick-Sort-in-Python/</id>
+    <published>2017-12-05T16:00:00.000Z</published>
+    <updated>2017-12-06T11:18:26.328Z</updated>
+    
+    <content type="html"><![CDATA[<p><br></p><p><font color="red">Sorting</font> is the basic building block around which many other algorithms are build.</p><h3 id="Algorithm-Design-Techniques"><a href="#Algorithm-Design-Techniques" class="headerlink" title="Algorithm Design Techniques"></a>Algorithm Design Techniques</h3><h4 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h4><p><img src="/2017/12/06/Quick-Sort-in-Python/Devide-and-Conquer.png" alt=""></p><ul><li>Split into two equal-sized pieces</li><li>Direct solution: boundary condition for n&lt;=k</li></ul><p><img src="/2017/12/06/Quick-Sort-in-Python/Tn.png" alt=""></p><h3 id="QuickSort-C-A-R-Hoare-1960"><a href="#QuickSort-C-A-R-Hoare-1960" class="headerlink" title="QuickSort (C.A.R Hoare 1960)"></a>QuickSort (C.A.R Hoare 1960)</h3><p><img src="/2017/12/06/Quick-Sort-in-Python/Quicksort.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Procedure Quicksort(first, last)</span><br><span class="line">    if first&lt;last then</span><br><span class="line">        pivot:=first (or some other index, depending on a strategy)</span><br><span class="line">        Split(first, last, pivot, SplitPoint);</span><br><span class="line">        Quicksort(first, SplitPoint-1);</span><br><span class="line">        Quicksort(SplitPoint+1, last);</span><br><span class="line">    end if</span><br></pre></td></tr></table></figure><h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p><img src="/2017/12/06/Quick-Sort-in-Python/example.png" alt=""></p><h4 id="When-is-the-worst-case"><a href="#When-is-the-worst-case" class="headerlink" title="When is the worst case?"></a>When is the worst case?</h4><ul><li><p>It should be when the set is already sorted in ascending order:</p><p><img src="/2017/12/06/Quick-Sort-in-Python/worstcase_1.png" alt=""></p></li></ul><h4 id="Average-case"><a href="#Average-case" class="headerlink" title="Average case"></a>Average case</h4><ul><li><p>We assume equal split at each step and n=2^k, so k = log n.</p><p><img src="/2017/12/06/Quick-Sort-in-Python/worstcase_2.png" alt=""></p></li><li><p>Assume that the keys are distinct and that all permutations are equally likely.</p></li><li><p>A(n) = the <strong>average</strong> number of key comparisons for lists of size n.</p><p><img src="/2017/12/06/Quick-Sort-in-Python/averagecase.png" alt=""></p><p>So A(n) is 𝚹(n log n)</p></li></ul><h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><ul><li>You can choose any index of the list as a pivot.</li></ul><h4 id="first-as-pivot"><a href="#first-as-pivot" class="headerlink" title="first as pivot"></a>first as pivot</h4><p>Here is the main part of the algorithm.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">QuickSort_first_pivot</span><span class="params">(self, list, first, last)</span>:</span></span><br><span class="line"><span class="keyword">if</span> first&lt;last: <span class="comment"># check whether the first index is smaller than last index</span></span><br><span class="line">divIndex=self.Partition_first_pivot(list,first,last) <span class="comment"># 4n + 1 ## divide the list into two lists by the splitpoint</span></span><br><span class="line"><span class="comment">#both of two are ((n^2-n)/2)</span></span><br><span class="line">self.QuickSort_first_pivot(list,first,divIndex<span class="number">-1</span>) <span class="comment"># do recursion on the front part</span></span><br><span class="line">self.QuickSort_first_pivot(list,divIndex+<span class="number">1</span>,last) <span class="comment"># do recursion on the back part</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"><span class="keyword">return</span> <span class="comment"># 1</span></span><br></pre></td></tr></table></figure><p>Now, we have to find theindex of the splitPoint.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Partition_first_pivot</span><span class="params">(self, list, first, last)</span>:</span></span><br><span class="line">    i=first <span class="comment"># 1 # make the i equals to first index</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(first+<span class="number">1</span>,last+<span class="number">1</span>): <span class="comment"># n-1 # for all element after the first element in the list</span></span><br><span class="line">        <span class="keyword">if</span> list[j]&lt;=list[first]: <span class="comment"># n-1 # if the element is smaller than the first (pivot)</span></span><br><span class="line">            i=i+<span class="number">1</span> <span class="comment"># n-1 # move the i to the right for one</span></span><br><span class="line">            list[i],list[j]=list[j],list[i] <span class="comment"># n-1 # exchange the i element and the j element for make the element which is smaller than pivot move to the front of the splitpoint</span></span><br><span class="line">    list.insert(i+<span class="number">1</span>, list[first]) <span class="comment"># 1 # move the pivot to the splitpoint</span></span><br><span class="line">    <span class="keyword">del</span> list[first] <span class="comment"># 1 delete the first element</span></span><br><span class="line">    <span class="keyword">return</span> i <span class="comment"># 1</span></span><br></pre></td></tr></table></figure><p>You can find that python is really concise.</p><h4 id="last-as-pivot"><a href="#last-as-pivot" class="headerlink" title="last as pivot"></a>last as pivot</h4><p>Main part:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">QuickSort_last_pivot</span><span class="params">(self, list, first, last)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> first&lt;last: <span class="comment"># 1</span></span><br><span class="line">        divIndex=self.Partition_last_pivot(list,first,last) <span class="comment"># 4n-1</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">#sum of two are ((n^2-n)/2)</span></span><br><span class="line">        self.QuickSort_last_pivot(list,first,divIndex)       </span><br><span class="line">        self.QuickSort_last_pivot(list,divIndex+<span class="number">1</span>,last) </span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="comment"># 1</span></span><br></pre></td></tr></table></figure><p>Partition operation:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Partition_last_pivot</span><span class="params">(self, list, first, last)</span>:</span></span><br><span class="line">    i=first<span class="number">-1</span> <span class="comment"># 1</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(first,last): <span class="comment"># n-1</span></span><br><span class="line">        <span class="keyword">if</span> list[j]&lt;=list[last]: <span class="comment"># n-1</span></span><br><span class="line">            i=i+<span class="number">1</span> <span class="comment"># n-1</span></span><br><span class="line">            list[i],list[j]=list[j],list[i] <span class="comment"># n-1</span></span><br><span class="line">    list[i+<span class="number">1</span>],list[last]=list[last],list[i+<span class="number">1</span>] <span class="comment"># 1 # do swap</span></span><br><span class="line">    <span class="keyword">return</span> i <span class="comment"># 1</span></span><br></pre></td></tr></table></figure><p>#### </p>]]></content>
+    
+    <summary type="html">
+    
+      QuickSort Algorithm implemented in Python
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.aishanghai.xin/categories/Algorithm/"/>
+    
+    
+      <category term="Sort" scheme="http://blog.aishanghai.xin/tags/Sort/"/>
+    
+      <category term="Python" scheme="http://blog.aishanghai.xin/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>调教自己的DuerOS</title>
@@ -60,15 +84,15 @@
       <category term="摘抄" scheme="http://blog.aishanghai.xin/categories/%E6%91%98%E6%8A%84/"/>
     
     
+      <category term="中国大陆" scheme="http://blog.aishanghai.xin/tags/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/"/>
+    
       <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
     
       <category term="思辨" scheme="http://blog.aishanghai.xin/tags/%E6%80%9D%E8%BE%A8/"/>
     
-      <category term="中国大陆" scheme="http://blog.aishanghai.xin/tags/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/"/>
+      <category term="季羡林" scheme="http://blog.aishanghai.xin/tags/%E5%AD%A3%E7%BE%A1%E6%9E%97/"/>
     
       <category term="人生" scheme="http://blog.aishanghai.xin/tags/%E4%BA%BA%E7%94%9F/"/>
-    
-      <category term="季羡林" scheme="http://blog.aishanghai.xin/tags/%E5%AD%A3%E7%BE%A1%E6%9E%97/"/>
     
   </entry>
   
@@ -90,9 +114,9 @@
       <category term="摘抄" scheme="http://blog.aishanghai.xin/categories/%E6%91%98%E6%8A%84/"/>
     
     
-      <category term="思辨" scheme="http://blog.aishanghai.xin/tags/%E6%80%9D%E8%BE%A8/"/>
-    
       <category term="经典" scheme="http://blog.aishanghai.xin/tags/%E7%BB%8F%E5%85%B8/"/>
+    
+      <category term="思辨" scheme="http://blog.aishanghai.xin/tags/%E6%80%9D%E8%BE%A8/"/>
     
       <category term="人生" scheme="http://blog.aishanghai.xin/tags/%E4%BA%BA%E7%94%9F/"/>
     
@@ -124,11 +148,11 @@
     
       <category term="思辨" scheme="http://blog.aishanghai.xin/tags/%E6%80%9D%E8%BE%A8/"/>
     
+      <category term="人生" scheme="http://blog.aishanghai.xin/tags/%E4%BA%BA%E7%94%9F/"/>
+    
       <category term="纪德" scheme="http://blog.aishanghai.xin/tags/%E7%BA%AA%E5%BE%B7/"/>
     
       <category term="法国" scheme="http://blog.aishanghai.xin/tags/%E6%B3%95%E5%9B%BD/"/>
-    
-      <category term="人生" scheme="http://blog.aishanghai.xin/tags/%E4%BA%BA%E7%94%9F/"/>
     
   </entry>
   
@@ -150,6 +174,8 @@
       <category term="摘抄" scheme="http://blog.aishanghai.xin/categories/%E6%91%98%E6%8A%84/"/>
     
     
+      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
+    
       <category term="林语堂" scheme="http://blog.aishanghai.xin/tags/%E6%9E%97%E8%AF%AD%E5%A0%82/"/>
     
       <category term="台湾" scheme="http://blog.aishanghai.xin/tags/%E5%8F%B0%E6%B9%BE/"/>
@@ -157,8 +183,6 @@
       <category term="民国" scheme="http://blog.aishanghai.xin/tags/%E6%B0%91%E5%9B%BD/"/>
     
       <category term="爱情" scheme="http://blog.aishanghai.xin/tags/%E7%88%B1%E6%83%85/"/>
-    
-      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
     
   </entry>
   
@@ -180,13 +204,13 @@
       <category term="摘抄" scheme="http://blog.aishanghai.xin/categories/%E6%91%98%E6%8A%84/"/>
     
     
+      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
+    
       <category term="林语堂" scheme="http://blog.aishanghai.xin/tags/%E6%9E%97%E8%AF%AD%E5%A0%82/"/>
     
       <category term="台湾" scheme="http://blog.aishanghai.xin/tags/%E5%8F%B0%E6%B9%BE/"/>
     
       <category term="民国" scheme="http://blog.aishanghai.xin/tags/%E6%B0%91%E5%9B%BD/"/>
-    
-      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
     
       <category term="思辨" scheme="http://blog.aishanghai.xin/tags/%E6%80%9D%E8%BE%A8/"/>
     
@@ -210,11 +234,11 @@
       <category term="摘抄" scheme="http://blog.aishanghai.xin/categories/%E6%91%98%E6%8A%84/"/>
     
     
-      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
-    
       <category term="老舍" scheme="http://blog.aishanghai.xin/tags/%E8%80%81%E8%88%8D/"/>
     
       <category term="中国大陆" scheme="http://blog.aishanghai.xin/tags/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/"/>
+    
+      <category term="近代" scheme="http://blog.aishanghai.xin/tags/%E8%BF%91%E4%BB%A3/"/>
     
       <category term="经典" scheme="http://blog.aishanghai.xin/tags/%E7%BB%8F%E5%85%B8/"/>
     
@@ -294,9 +318,9 @@
       <category term="读后感" scheme="http://blog.aishanghai.xin/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
     
-      <category term="爱情" scheme="http://blog.aishanghai.xin/tags/%E7%88%B1%E6%83%85/"/>
-    
       <category term="经典" scheme="http://blog.aishanghai.xin/tags/%E7%BB%8F%E5%85%B8/"/>
+    
+      <category term="爱情" scheme="http://blog.aishanghai.xin/tags/%E7%88%B1%E6%83%85/"/>
     
       <category term="法国" scheme="http://blog.aishanghai.xin/tags/%E6%B3%95%E5%9B%BD/"/>
     
