@@ -44,7 +44,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">QuickSort_last_pivot</span><span class="params">(self, list, first, last)</span>:</span></span><br><span class="line">	    <span class="keyword">if</span> first&lt;last: <span class="comment"># 1</span></span><br><span class="line">	        divIndex=self.Partition_last_pivot(list,first,last) <span class="comment"># 4n-1</span></span><br><span class="line">	 </span><br><span class="line">	 		<span class="comment">#sum of two are ((n^2-n)/2)</span></span><br><span class="line">	        self.QuickSort_last_pivot(list,first,divIndex)       </span><br><span class="line">	        self.QuickSort_last_pivot(list,divIndex+<span class="number">1</span>,last) </span><br><span class="line">	    <span class="keyword">else</span>:</span><br><span class="line">	        <span class="keyword">return</span> <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
 <p>Partition operation:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Partition_last_pivot</span><span class="params">(self, list, first, last)</span>:</span></span><br><span class="line">	    i=first<span class="number">-1</span> <span class="comment"># 1</span></span><br><span class="line">	    <span class="keyword">for</span> j <span class="keyword">in</span> range(first,last): <span class="comment"># n-1</span></span><br><span class="line">	        <span class="keyword">if</span> list[j]&lt;=list[last]: <span class="comment"># n-1</span></span><br><span class="line">	            i=i+<span class="number">1</span> <span class="comment"># n-1</span></span><br><span class="line">	            list[i],list[j]=list[j],list[i] <span class="comment"># n-1</span></span><br><span class="line">	    list[i+<span class="number">1</span>],list[last]=list[last],list[i+<span class="number">1</span>] <span class="comment"># 1 # do swap</span></span><br><span class="line">	    <span class="keyword">return</span> i <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
-<p>#### </p>
 ]]></content>
       
         <categories>
@@ -271,15 +270,15 @@
         
         <tags>
             
-            <tag> 中国大陆 </tag>
-            
             <tag> 近代 </tag>
             
             <tag> 思辨 </tag>
             
-            <tag> 季羡林 </tag>
-            
             <tag> 人生 </tag>
+            
+            <tag> 中国大陆 </tag>
+            
+            <tag> 季羡林 </tag>
             
         </tags>
         
@@ -329,11 +328,11 @@
         
         <tags>
             
-            <tag> 经典 </tag>
-            
             <tag> 思辨 </tag>
             
             <tag> 人生 </tag>
+            
+            <tag> 经典 </tag>
             
             <tag> 雪莱 </tag>
             
@@ -469,11 +468,11 @@
             
             <tag> 思辨 </tag>
             
-            <tag> 人生 </tag>
-            
             <tag> 纪德 </tag>
             
             <tag> 法国 </tag>
+            
+            <tag> 人生 </tag>
             
         </tags>
         
@@ -553,8 +552,6 @@
         
         <tags>
             
-            <tag> 近代 </tag>
-            
             <tag> 林语堂 </tag>
             
             <tag> 台湾 </tag>
@@ -562,6 +559,8 @@
             <tag> 民国 </tag>
             
             <tag> 爱情 </tag>
+            
+            <tag> 近代 </tag>
             
         </tags>
         
@@ -628,13 +627,13 @@
         
         <tags>
             
-            <tag> 近代 </tag>
-            
             <tag> 林语堂 </tag>
             
             <tag> 台湾 </tag>
             
             <tag> 民国 </tag>
+            
+            <tag> 近代 </tag>
             
             <tag> 思辨 </tag>
             
@@ -660,11 +659,11 @@
         
         <tags>
             
+            <tag> 近代 </tag>
+            
             <tag> 老舍 </tag>
             
             <tag> 中国大陆 </tag>
-            
-            <tag> 近代 </tag>
             
             <tag> 经典 </tag>
             
@@ -694,9 +693,9 @@
         
         <tags>
             
-            <tag> 中国大陆 </tag>
-            
             <tag> 人生 </tag>
+            
+            <tag> 中国大陆 </tag>
             
             <tag> 余秋雨 </tag>
             
@@ -772,11 +771,11 @@
         
         <tags>
             
-            <tag> 经典 </tag>
-            
             <tag> 爱情 </tag>
             
             <tag> 法国 </tag>
+            
+            <tag> 经典 </tag>
             
             <tag> 大仲马 </tag>
             
